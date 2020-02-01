@@ -171,28 +171,28 @@ JavaScript code that does things to that canvas.
 
 ```html
 <html>
-	<head>
-		...
-	</head>
-	<body>
-		<canvas id="app"></canvas>
+    <head>
+        ...
+    </head>
+    <body>
+        <canvas id="app"></canvas>
 
-		<!-- three.js -->
+        <!-- three.js -->
 
-		<script src="lib/three.js/build/three.min.js"></script>
-		<script src="lib/three.js/examples/js/WebGL.js"></script>
-		<script src="lib/three.js/examples/js/controls/OrbitControls.js"></script>
+        <script src="lib/three.js/build/three.min.js"></script>
+        <script src="lib/three.js/examples/js/WebGL.js"></script>
+        <script src="lib/three.js/examples/js/controls/OrbitControls.js"></script>
 
-		<!-- Other libs -->
+        <!-- Other libs -->
 
-		<script src="lib/three.js-pilot/threejs-pilot.js"></script>
-		<script src="lib/TweenJS/tweenjs.min.js"></script>
+        <script src="lib/three.js-pilot/threejs-pilot.js"></script>
+        <script src="lib/TweenJS/tweenjs.min.js"></script>
 
-		<!-- App -->
+        <!-- App -->
 
-		<script src="js/app.js"></script>
+        <script src="js/app.js"></script>
 
-	</body>
+    </body>
 </html>
 ```
 
@@ -259,12 +259,12 @@ Next comes the main `if` structure. It simply goes like this:
 ```javascript
 if ( THREE.WEBGL.isWebGL2Available() ) {
 
-	init();
-	animate();
+    init();
+    animate();
 
 } else {
 
-	document.body.appendChild( THREE.WEBGL.getWebGL2ErrorMessage() );
+    document.body.appendChild( THREE.WEBGL.getWebGL2ErrorMessage() );
 
 }
 ```
@@ -293,17 +293,17 @@ the `animate` function.
 ```javascript
 function render() {
 
-	if ( canvas.width !== canvas.clientWidth || canvas.height !== canvas.clientHeight ) {
+    if ( canvas.width !== canvas.clientWidth || canvas.height !== canvas.clientHeight ) {
 
-		canvasWidth = canvas.clientWidth;
-		canvasHeight = canvas.clientHeight;
-		onCanvasResize();
+        canvasWidth = canvas.clientWidth;
+        canvasHeight = canvas.clientHeight;
+        onCanvasResize();
 
-	}
+    }
 
-	controls.update();
+    controls.update();
 
-	renderer.render( scene, camera );
+    renderer.render( scene, camera );
 
 }
 ```
@@ -318,15 +318,15 @@ function:
 ```javascript
 function animate() {
 
-	createjs.Tween.get( cube.rotation, { loop: true } )
-		.set( { x: 0, y: 0, z: 0 } )
-		.to( { x: Math.PI * 2, y: Math.PI * 2 }, 1500, createjs.Ease.quadInOut )
-		.to( { x: 0, y: 0 }, 0 );
+    createjs.Tween.get( cube.rotation, { loop: true } )
+        .set( { x: 0, y: 0, z: 0 } )
+        .to( { x: Math.PI * 2, y: Math.PI * 2 }, 1500, createjs.Ease.quadInOut )
+        .to( { x: 0, y: 0 }, 0 );
 
-	createjs.Tween.get( cube.scale, { loop: true } )
-		.set( { x: 1, y: 1, z: 1 } )
-		.to( { x: 1.8, y: 1.8, z: 1.8 }, 750, createjs.Ease.quadIn )
-		.to( { x: 1, y: 1, z: 1 }, 750, createjs.Ease.quadOut );
+    createjs.Tween.get( cube.scale, { loop: true } )
+        .set( { x: 1, y: 1, z: 1 } )
+        .to( { x: 1.8, y: 1.8, z: 1.8 }, 750, createjs.Ease.quadIn )
+        .to( { x: 1, y: 1, z: 1 }, 750, createjs.Ease.quadOut );
 
 }
 ```
