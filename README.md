@@ -191,7 +191,6 @@ JavaScript code that does things to that canvas.
         <!-- App -->
 
         <script src="js/app.js"></script>
-
     </body>
 </html>
 ```
