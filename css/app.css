@@ -1,0 +1,11 @@
+div {
+	position: absolute;
+	bottom: 30px;
+	width: 100%;
+	font-size: 25px;
+	font-family: mono;
+	color: black;
+	text-align: center;
+	display: block;
+	z-index: 1;
+}
