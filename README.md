@@ -2,7 +2,8 @@
 
 [use]: https://github.com/you-create/three.js-skeleton/generate
 
-A basic template for small three.js experiments.
+A basic template for small three.js experiments. An example is being built,
+stand by.
 
 Looks good? [Use this template][use].
 
