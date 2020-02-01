@@ -1,0 +1,17 @@
+module.exports = {
+	'env': {
+		'browser': true,
+		'es6': true
+	},
+	'extends': 'mdcs',
+	'globals': {
+		'Atomics': 'readonly',
+		'SharedArrayBuffer': 'readonly',
+		'createjs': false
+	},
+	'parserOptions': {
+		'ecmaVersion': 2018
+	},
+	'rules': {
+	}
+};
