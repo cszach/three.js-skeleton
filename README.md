@@ -10,11 +10,8 @@ Looks good? [Use this template][use].
 ## Table of Content
 
 1. [Aims](#aims)
-2. [Specification](#specification)
+2. [Details](#details)
     1. [Introduction and Overview](#introduction-and-overview)
-        1. [Open](#open)
-        2. [Readable](#readable)
-        3. [Maintainable](#maintainable)
     2. [Directory structure](#directory-structure)
         1. [Overview](#overview)
         2. [Sub-directories](#sub-directories)
@@ -22,10 +19,10 @@ Looks good? [Use this template][use].
         4. [Additional files](#additional-files)
     3. [Entry HTML file](#entry-html-file)
         1. [Overview](#overview-1)
-        2. [Rules](#rules)
+        2. [Structure](#structure)
     4. [Entry JavaScript file](#entry-javascript-file)
         1. [Overview](#overview-2)
-        2. [Structure](#structure)
+        2. [Structure](#structure-1)
             1. [Global variables' definitions](#global-variables-definitions)
             2. [The main if structure](#the-main-if-structure)
             3. [The `init` function](#the-init-function)
@@ -40,56 +37,28 @@ Looks good? [Use this template][use].
 - Readable
 - Maintainable
 
-## Specification
+## Details
 
 ### Introduction and Overview
 
-This is a semi-formal specification that governs the directory structure as well
-as the design architecture of this template. This template is a basic template
-for three.js experiments, and it aims to be **open**, **readable**, and
-**maintainable**. To achieve these aims, clear stipulations have been set for
-each aim, and these stipulations serve as guidelines for the main content of
-this specification.
+This is a template that is designed to best suit small three.js experiments. It
+aims to be **open**, **readable**, and **maintainable**.
 
-#### Open
+- **Open**: You can create new repositories from this template and you can use
+  a different license for those repos
+- **Readable**: Code readability is encouraged
+- **Maintainable**: Structuring is done in such a way that makes it quick to
+  find and fix things
 
-1. Everyone who uses this template is encouraged to modify the template however
-   they wish, adapting their own needs or any requirement that they must comply
-   with.
-2. Everyone who uses this template to start a new project is free to use a
-   different license for their project, as this template is a dedication to the 
-   public domain.
-
-#### Readable
-
-1. To encourage code readability, text found in text files (including code) in
-   this template is carefully formatted, linted, and fixed. The specification
-   also encourages the use of linters to quickly and effortlessly find and fix
-   errors.
-2. Above of all, everyone who uses this template is encouraged to write text
-   and code in their own coding style, or to comply with any guidelines they
-   have to comply with.
-
-#### Maintainable
-
-1. Configuration files and general single-paged documents like `README` or
-   `LICENSE` must be placed at the root of the directory structure.
-2. Code files must be separated from other files (e.g. textures, maps, models).
-3. Code files must be properly grouped using directories. Similarly, other files
-   must be properly grouped using directories. Grouping and directory naming has
-   to be done in such a way that makes it quick and easy to find files.
-4. The entry point on the JavaScript side (which is basically a JavaScript
-   source file) does the three.js experiment. This is where the 3D scene,
-   cameras, renderers, as well as other meshes are created and animated.
-5. Different chunks of code doing different jobs must be separated using
-   comments, blank lines, code blocks, or functions.
-6. Code should be formatted and fixed (e.g. using a linter).
+If you use this template, it is important that you know how this template is
+designed. Please read on.
 
 ### Directory structure
 
 #### Overview
 
 - `index.html`: The main HTML file, the entry point of the web page
+- `css/`: Contains CSS source files
     - `basic.css`: Basic CSS styles, these include CSS styles that make the
     canvas for the three.js experiment as big as the inner browser window
     - `app.css`: Defines CSS styles for elements that are part of the experiment
@@ -108,25 +77,28 @@ this specification.
 
 #### Sub-directories
 
-- JavaScript source files in `js/`, excluding the entry file `app.js`, should be
-  reasonably placed into sub-directories
-- CSS source files in `css/` should also be reasonably placed into
-  sub-directories, especially when there are many of them
-- In `css/` or `js/`, if there are only a few source files and they don't
-  properly fit into distinct groups, they don't have to be placed inside sub-directories (this does not imply that CSS files and JavaScript files can be
-  put altogether under a single directory)
-- Each library in `lib/` must have its own dedicated directory, where all of its
-  files are stored, even if the library has one or a few files
-- Every set of maps that define a material must be placed inside a distinct
-  sub-directory of `assets/textures/`
-- Every set of maps that define a cube map must be placed inside a distinct
-  sub-directory of `assets/cube-maps/`
-- Model/Mesh files in `assets/models/` should be reasonably grouped using
-  sub-directories, especially when there are many of them
-- Files in `assets/img/` and `assets/videos/` should also be reasonably grouped
-  using sub-directories, especially when there are many of them
-- Fonts that belong to a typeface (i.e. font family) must be placed inside a
-  distinct sub-directory of `assets/fonts/`
+Directories are a great way to group things. It is important that you create
+sub-directories to group files in `css/`, `js/`, `lib/`, and sub-directories of
+`assets/`. You are encouraged to create directories to group files and name
+those directories in the way that you find comfortable to work with. Haven't
+found yourself a good way to manage and name directories? Here are a few
+suggestions:
+
+- `css/` and `js/`: If there are only a few source files and they don't fit well
+  into different distinct categories, you don't have to create sub-directories
+- `lib/`: Each library should have its own dedicated directory, even when it has
+  only one file
+- `assets/textures/`: Each set of maps that define a different material should
+  be in its own distinct directory
+- `assets/cube-maps/`: Similar to `assets/textures/`
+- `assets/fonts/`: Each typeface (which can contain many individual fonts)
+  should be in its own directory
+- `assets/img/`, `assets/videos/`, `assets/models/`: If there are only a small
+  number of files and they don't fit well into different distinct categories,
+  you don't have to create sub-directories
+
+> An example project is being built and promises to demonstrate good directory
+management according to these suggestions.
 
 #### General, single-page documents
 
@@ -142,11 +114,13 @@ Other files that would fit into this category include `CONTRIBUTING.md` and
 
 #### Additional files
 
-These files appear in the template, but that's about it. Configuration files
-like these must be placed at the root of the project directory.
+These files appear in the template, but that's about it. You may or may not need
+these files depending on your needs. Configuration files like these must be
+placed at the root of the project directory.
 
-- `.eslintrc.js`: ESLint configuration file
 - `.gitignore`: Git ignore file
+- `.eslintrc.js`: ESLint configuration file
+- `.editorconfig`: EditorConfig file
 
 ### Entry HTML file
 
@@ -156,18 +130,25 @@ The entry HTML file is and should be `index.html`. It appears at the root of the
 directory structure. It contains a `<canvas>` element, as well as links to
 JavaScript code that does things to that canvas.
 
-#### Rules
+#### Structure
 
-1. `<meta>` tags, `<title>`, and links to stylesheets must be in `<head>`
-2. The `<canvas>` and `<script>` tags must be in the document `<body>`
-3. The `<canvas>` element is assigned an ID "app" (loosy spec, you might not
-   want to do this)
-4. `<script>` tags must go after the `<canvas>` tag
-5. Among the `<script>` tags:
-    1. Those that link to three.js should go first (if there is no good reason
-       to NOT put them first)
-    2. The tag that links to the entry JavaScript source file should go last
-    3. Tags must be grouped and separated reasonably, as shown below
+1. The HTML document's Head (`<head>`) contains `<meta>` tags, the `<title>`
+   tag, and links to stylesheets.
+2. The HTML document's Body (`<body>`) contains a `<canvas>` tag where the
+   three.js experiment takes place, followed by `<script>` tags that define the
+   JavaScript code that does things to the DOM, the canvas, etc.
+3. You should order the tags in such a way that makes your three.js app works,
+   and that makes it easy for you to look at without getting overwhelmed,
+   because there might be a lot of `<script>` tags. Adding blank lines and
+   comments is recommended to separate the `<script>` tags.
+
+Suggested order for `<script>` tags:
+
+1. Polyfills
+2. Source files from `three.js`
+3. Other libraries' source files
+4. Your three.js app's source files
+5. Analytics & other JavaScript code
 
 ```html
 <html>
