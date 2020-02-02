@@ -24,7 +24,7 @@ Looks good? [Use this template][use].
         1. [Overview](#overview-2)
         2. [Structure](#structure-1)
             1. [Global variables' definitions](#global-variables-definitions)
-            2. [The main if structure](#the-main-if-structure)
+            2. [The main `if` structure](#the-main-if-structure)
             3. [The `init` function](#the-init-function)
             4. [The `render` function](#the-render-function)
             5. [The `animate` function](#the-animate-function)
