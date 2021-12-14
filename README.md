@@ -1,6 +1,6 @@
 # three.js-skeleton
 
-[use]: https://github.com/you-create/three.js-skeleton/generate
+[use]: https://github.com/novakcgx/three.js-skeleton/generate
 
 A basic template for small three.js experiments. An example is being built,
 stand by.
